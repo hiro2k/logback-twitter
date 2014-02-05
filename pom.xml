@@ -9,8 +9,8 @@
 
     <name>logback-twitter</name>
     <description>Twiter Logback Appender</description>
-
-    <url></url>
+    <url>https://github.com/hiro2k/logback-twitter</url>
+    
     <licenses>
         <license>
             <name>The Apache Software License, Version 2.0</name>
@@ -18,10 +18,12 @@
             <distribution>repo</distribution>
         </license>
     </licenses>
+    
     <scm>
         <url>https://github.com/hiro2k/logback-twitter</url>
         <connection>scm:git:git://github.com/hiro2k/logback-twitter.git</connection>
     </scm>
+    
     <developers>
         <developer>
             <id>hiro2k@gmail.com</id>
@@ -34,12 +36,21 @@
             <timezone>America/Monterrey</timezone>
         </developer>
     </developers>
-   
+
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
-    
+
     <dependencies>
-        
+        <dependency>
+            <groupId>org.twitter4j</groupId>
+            <artifactId>twitter4j-core</artifactId>
+            <version>3.0.5</version>
+        </dependency>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>1.0.13</version>
+        </dependency>
     </dependencies>
 </project>
