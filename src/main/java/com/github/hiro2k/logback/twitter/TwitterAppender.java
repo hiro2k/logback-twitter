@@ -107,19 +107,19 @@ public class TwitterAppender extends AppenderBase<ILoggingEvent> {
     @Override
     public void start() {
         boolean requiredPropsSet = true;
-        if (accessToken == null) {
+        if (getAccessToken() == null) {
             addStatus(new ErrorStatus("Access token not set", this));
             requiredPropsSet = false;
         }
-        if (accessSecret == null) {
+        if (getAccessSecret() == null) {
             addStatus(new ErrorStatus("Access secret not set", this));
             requiredPropsSet = false;
         }
-        if (consumerKey == null) {
+        if (getConsumerKey() == null) {
             addStatus(new ErrorStatus("Consumer key not set", this));
             requiredPropsSet = false;
         }
-        if (consumerSecret == null) {
+        if (getConsumerSecret() == null) {
             addStatus(new ErrorStatus("Consumer Secret not set", this));
             requiredPropsSet = false;
         }

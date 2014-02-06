@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <!-- dump status message on the console as they arrive -->
+    <statusListener class="ch.qos.logback.core.status.OnConsoleStatusListener" />
+
+    <appender name="TWITTER" class="com.github.hiro2k.logback.twitter.TwitterAppender">
+        <consumerKey>${consumerKey}</consumerKey>
+        <consumerSecret>${consumerSecret}</consumerSecret>
+        <accessToken>${accessToken}</accessToken>
+        <accessSecret>${accessSecret}</accessSecret>
+        <layout>
+            <pattern>%logger{0} - %m%n%ex{short}</pattern>
+        </layout>
+    </appender>
+
+
+    <root level="INFO">
+        <appender-ref ref="TWITTER" />
+    </root>
+</configuration>

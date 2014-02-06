@@ -19,6 +19,7 @@ import ch.qos.logback.classic.spi.ILoggingEvent;
 import ch.qos.logback.classic.spi.LoggingEventVO;
 import ch.qos.logback.core.Context;
 import ch.qos.logback.core.ContextBase;
+import org.junit.Before;
 import org.junit.Test;
 import static org.mockito.Mockito.*;
 import twitter4j.Twitter;
@@ -33,6 +34,12 @@ public class TwitterAppenderTest {
     Context context = new ContextBase();
 
     public TwitterAppenderTest() {
+    }
+
+    @Before
+    public void setTwitterLogger() {
+        // The twitter API finds SLF4J on our path and tries to use it, but that screws everything up.
+        System.setProperty("twitter4j.loggerFactory", "twitter4j.internal.logging.NullLoggerFactory");
     }
 
     /**
@@ -57,6 +64,7 @@ public class TwitterAppenderTest {
         System.out.println("start properties");
         // Spy is easier than callReal
         TwitterAppender instance = spy(new TwitterAppender());
+        instance.setContext(context);
         instance.setAccessSecret("");
         instance.setAccessToken("");
         instance.setConsumerKey("");
