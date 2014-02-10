@@ -22,6 +22,7 @@
     <scm>
         <url>https://github.com/hiro2k/logback-twitter</url>
         <connection>scm:git:git://github.com/hiro2k/logback-twitter.git</connection>
+        <developerConnection>scm:git:ssh://git@github.com/hiro2k/logback-twitter.git</developerConnection>
     </scm>
     
     <developers>
